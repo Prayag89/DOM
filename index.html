@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Task2</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Demo 2</h1>
+            <input type="text" placeholder="Enter your Id..." id="input">
+            <button type="submit" id="clickBtn">Create</button>
+        </header>
+        <section>
+            <ul id="id-list">
+                    
+            </ul>
+        </section>
+    </main>
+    <script>
+        function myfunction(){
+            var inputValue = document.getElementById("input").value;
+            console.log(inputValue);
+            let li=document.createElement("li")
+            console.log(li);
+            li.innerHTML=inputValue;
+            let ul=document.getElementById("id-list")
+            ul.append(li);
+            let delt = document.createElement("button")
+            delt.innerHTML="Delete"
+            delt.setAttribute("onclick",'dltfunction()');
+            console.log(ul);
+            ul.append(delt);
+            document.getElementById("input").value=''
+        }
+
+        dltfunction()
+
+        
+        clickBtn.addEventListener('click',myfunction)
+    </script>
+
+</body>
+</html>
