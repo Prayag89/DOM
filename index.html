@@ -22,23 +22,46 @@
         </section>
     </main>
     <script>
+
+        
+        var num = 0;
+
         function myfunction(){
             var inputValue = document.getElementById("input").value;
-            console.log(inputValue);
+            // console.log(inputValue);
+
+            if( inputValue[0]==undefined || inputValue[0]===' '){
+
+                alert('Please enter value!');
+              
+            }
+            else{
             let li=document.createElement("li")
-            console.log(li);
+            // console.log(li);
             li.innerHTML=inputValue;
+            li.className='row'+num;
             let ul=document.getElementById("id-list")
             ul.append(li);
             let delt = document.createElement("button")
             delt.innerHTML="Delete"
-            delt.setAttribute("onclick",'dltfunction()');
-            console.log(ul);
-            ul.append(delt);
+            delt.className="row"+num;
+            num++;
+            delt.setAttribute("onclick",'dltfunction(this)');
+            
+            li.append(delt);
             document.getElementById("input").value=''
-        }
+         
 
-        dltfunction()
+            }
+            
+        } 
+
+         function dltfunction(a){
+            var b=a.className;
+           let list= document.getElementsByClassName(b);
+           console.log(list);
+           list[0].remove();
+         }
 
         
         clickBtn.addEventListener('click',myfunction)
